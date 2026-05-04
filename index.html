@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IMPÉRO • Tailored for Legacy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Entry Screen -->
+  <div id="entryScreen" class="min-h-screen flex items-center justify-center relative">
+    <div class="absolute inset-0 bg-[radial-gradient(#C6A76A_1px,transparent_1px)] [background-size:60px_60px] opacity-10"></div>
+    
+    <div class="text-center z-10 px-6">
+      <img id="wardrobe" src="https://images.unsplash.com/photo-1600585154340-be6161a56a9c?w=800&q=85" 
+           class="mx-auto max-w-md md:max-w-lg rounded-3xl shadow-2xl" alt="Impéro Wardrobe">
+      
+      <h1 id="title" class="heading text-7xl md:text-8xl tracking-widest text-[#C6A76A] mt-10 opacity-0">IMPÉRO</h1>
+      <p id="tagline" class="text-2xl tracking-widest text-[#5C3A21] mt-3 opacity-0">TAILORED FOR LEGACY</p>
+      
+      <button onclick="enterSite()" class="mt-16 px-20 py-8 border-2 border-[#C6A76A] text-[#C6A76A] hover:bg-[#C6A76A] hover:text-black text-xl tracking-widest gold-glow">
+        ENTER THE LEGACY
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Website -->
+  <div id="mainSite" class="hidden">
+    <header class="fixed top-0 w-full bg-[#F8F4ED]/95 backdrop-blur-lg z-50 border-b border-[#C6A76A]/10">
+      <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+        <h1 class="heading text-3xl tracking-widest">IMPÉRO</h1>
+        <nav class="hidden md:flex gap-10 text-sm tracking-widest">
+          <a href="#" class="hover:text-[#C6A76A]">COLLECTION</a>
+          <a href="#" class="hover:text-[#C6A76A]">NEW ARRIVALS</a>
+          <a href="#" class="hover:text-[#C6A76A]">BESPOKE</a>
+          <a href="#" class="hover:text-[#C6A76A]">ABOUT</a>
+        </nav>
+        <div class="flex gap-6 items-center text-xl">
+          <i class="fa-solid fa-magnifying-glass cursor-pointer hover:text-[#C6A76A]"></i>
+          <i class="fa-solid fa-heart cursor-pointer hover:text-[#C6A76A]"></i>
+          <i onclick="toggleCart()" class="fa-solid fa-bag-shopping cursor-pointer hover:text-[#C6A76A] relative">
+            <span id="cartCount" class="absolute -top-1 -right-1 bg-[#C6A76A] text-black text-xs w-5 h-5 rounded-full flex items-center justify-center">0</span>
+          </i>
+        </div>
+      </div>
+    </header>
+
+    <section class="pt-28 pb-16 text-center px-6">
+      <h2 id="heroTitle" class="heading text-5xl md:text-7xl leading-tight max-w-4xl mx-auto">Crafted for Those Who Leave a Legacy</h2>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 pb-20">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="productGrid"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
